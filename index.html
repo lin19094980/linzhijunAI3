@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>柯基情侣法官</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              corgi: {
+                100: '#FFF5E6',
+                200: '#FFE8CC',
+                300: '#FFDFB3',
+                500: '#FFB347',
+                700: '#E69500',
+              },
+              girly: {
+                100: '#FFF0F5',
+                200: '#FFDEE9',
+                300: '#FFB6C1',
+                400: '#FF9EAE',
+                500: '#FF69B4',
+                700: '#DB7093',
+              },
+              boy: {
+                100: '#E0F7FA',
+                200: '#B2EBF2',
+                300: '#4DD0E1',
+                400: '#26C6DA',
+                500: '#00BCD4',
+              }
+            },
+            fontFamily: {
+              sans: ['"Nunito"', '"Comic Sans MS"', '"Chalkboard SE"', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'bounce-slow': 'bounce 3s infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap');
+      
+      body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #FFF5E6;
+        /* Fashionable Polka Dot Background */
+        background-image: radial-gradient(#FFB347 15%, transparent 16%), radial-gradient(#FFB6C1 15%, transparent 16%);
+        background-size: 60px 60px;
+        background-position: 0 0, 30px 30px;
+        /* Fade it out slightly so it's not too busy */
+        position: relative;
+        min-height: 100vh;
+      }
+      
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 245, 230, 0.85); /* Overlay to soften dots */
+        z-index: -1;
+      }
+
+      .wiggle:hover {
+        animation: wiggle 1s ease-in-out infinite;
+      }
+      @keyframes wiggle {
+        0%, 100% { transform: rotate(-3deg); }
+        50% { transform: rotate(3deg); }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- Vercel/Vite 需要显式引入入口文件 -->
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
